@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Párodian</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="kwitter.js"></script>
+	<script>
+		function changeLanguage() {
+			var selectedLanguage = document.getElementById("languageSelect").value;
+			if (selectedLanguage === "en") {
+				// Set content in English
+				document.getElementById("header").innerText = "Párodian";
+				document.getElementById("internet_world").innerText = "Navigate the Internet World";
+				document.getElementById("join_today").innerText = "Join Párodian Today";
+				document.getElementById("username_label").innerText = "Username:";
+				document.getElementById("username_placeholder").placeholder = "Username: e.g. Enzo";
+				document.getElementById("login_button").innerText = "Log In";
+			} else if (selectedLanguage === "pt") {
+				// Set content in Portuguese
+				document.getElementById("header").innerText = "Párodian";
+				document.getElementById("internet_world").innerText = "Navegue no mundo da internet";
+				document.getElementById("join_today").innerText = "Junte-se ao Párodian hoje";
+				document.getElementById("username_label").innerText = "Nome do Usuário:";
+				document.getElementById("username_placeholder").placeholder = "Nome de Usuário: Ex: Enzo";
+				document.getElementById("login_button").innerText = "Fazer Login";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1 class="header" id="header">
+			Párodian <sup><img src="m2.png"></sup>
+		</h1>
+		<div class="col-lg-4 col-md-6 col-sm-6 col-xs-11 login_div">
+			<img src="logo.png" class="logo">
+			<h3 id="internet_world">Navigate the Internet World</h3>
+			<h4 id="join_today">Join Párodian Today</h4>
+			<div class="form-group">
+				<label id="username_label">Username:</label>
+				<input type="text" id="name_of_user" class="form-control" placeholder="Username:"
+					id="username_placeholder">
+			</div>
+			<button id="submit" class="btn btn-primary" onclick="addUser()" id="login_button">Log In</button>
+			<br>
+			<label for="languageSelect">Select Language:</label>
+			<select id="languageSelect" onchange="changeLanguage()">
+				<option value="en">English</option>
+				<option value="pt">Português</option>
+			</select>
+		</div>
+	</center>
+</body>
+
+</html>
